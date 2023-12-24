@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
+use App\Models\BusStop;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use App\Models\BusStop;
-use Carbon\Carbon;
+use PDF;
 
 class HomeController extends Controller
 {
@@ -30,8 +31,6 @@ class HomeController extends Controller
                 // Return the data or pass it to a view
                 return view('userDashboard.index', ['ticketSales' => $ticketSales]);
                 
-             //return view('userDashboard.index');
-                 //   return view('dashboard');
             }
          }
     }
@@ -128,6 +127,14 @@ class HomeController extends Controller
 
         // Optionally, you can redirect the user to a thank you page or another page
         return redirect()->route('dashboard');
+    }
+
+    public function print_pdf($id){
+        $ticket_sales=DB::table('ticket_sales')->find($id);
+
+        $pdf=PDF::loadView('admin.pdf',compact('ticket_sales'));
+
+        return $pdf->download('Green-Line.pdf');
     }
     
 }

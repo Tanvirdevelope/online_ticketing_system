@@ -38,7 +38,7 @@
                                         <td class="py-2 px-4 border-b text-green-500 font-semibold">{{ $ticketSale->seat }}</td>
                                         <td class="py-2 px-4 border-b text-green-500 font-semibold">{{ $ticketSale->fare }}</td>
                                         <td class="py-2 px-4 border-b">
-                                            <a href="#" class="text-blue-500 hover:underline">Download</a>
+                                            <a href="{{url('print_pdf',$ticketSale->id)}}" class="text-blue-500 hover:underline">Download</a>
                                         </td>
                                     </tr>
                                     @endforeach

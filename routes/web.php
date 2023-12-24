@@ -27,7 +27,7 @@ Route::get('/bus-view', function () {
 })->name('bus_view_Notice');
 
 Route::get('/dashboard',[HomeController::class, 'user_type_check'])->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::get('/print_pdf/{id}',[HomeController::class, 'print_pdf']);
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
