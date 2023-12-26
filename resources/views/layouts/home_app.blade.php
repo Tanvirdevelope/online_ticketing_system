@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
             <!-- Navbar Brand and Toggle Button -->
-            <a class="navbar-brand" href="#">Cox's Bazar Express</a>
+            <a class="navbar-brand" href="#">Green Line Poribahan</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

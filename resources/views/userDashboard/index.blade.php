@@ -10,8 +10,12 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="container mx-auto mt-8 p-4 bg-white rounded-lg shadow-md">
+                        <button class="mb-5">
+                            <a href="{{url("/")}}" class="bg-lime-300 text-gray-700 px-3 py-1.5 text-2xl rounded-md border-2 hover:border-sky-600 hover:border-2 hover:bg-white hover:text-lime-600 duration-500">Buy Ticket</a>
+                        </button>
                         <h1 class="text-2xl text-slate-700 font-semibold mb-4">Bus Ticket Information</h1>
-                    
+                            
+                      
                         <!-- Bus Ticket Table -->
                         <div class="overflow-x-auto">
                             <table class="min-w-full bg-white border border-gray-300">
@@ -35,10 +39,12 @@
                                         <td class="py-2 px-4 border-b">{{ $ticketSale->from }}</td>
                                         <td class="py-2 px-4 border-b">{{ $ticketSale->to }}</td>
                                         <td class="py-2 px-4 border-b">{{ $ticketSale->doj }}</td>
-                                        <td class="py-2 px-4 border-b text-green-500 font-semibold">{{ $ticketSale->seat }}</td>
-                                        <td class="py-2 px-4 border-b text-green-500 font-semibold">{{ $ticketSale->fare }}</td>
+                                        <td class="py-2 px-4 border-b font-semibold">{{ $ticketSale->seat }}</td>
+                                        <td class="py-2 px-4 border-b text-green-500 font-semibold">{{ $ticketSale->amount }}</td>
                                         <td class="py-2 px-4 border-b">
-                                            <a href="{{url('print_pdf',$ticketSale->id)}}" class="text-blue-500 hover:underline">Download</a>
+                                            <button>
+                                                <a href="{{url('print_pdf',$ticketSale->id)}}" class="bg-rose-500 p-1.5 rounded-md border-2 text-gray-200 hover:border-sky-600 hover:border-2 hover:bg-white hover:text-rose-600 duration-500">Download</a>
+                                            </button>
                                         </td>
                                     </tr>
                                     @endforeach
